@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  /* Paper & ink */
+  --paper: #f3f4f1;
+  --surface: #fffffe;
+  --ink: #172420;
+  --ink-soft: #4a564f;
+  --border: #dde1d8;
+
+  /* Connection (edges, links, primary actions) */
+  --teal: #1f6f5c;
+  --teal-dark: #165445;
+  --teal-tint: #e3efe9;
+
+  /* Expertise (skills, badges) */
+  --ochre: #b8863c;
+  --ochre-tint: #f5ead2;
+
+  /* Signals */
+  --danger: #a13f2e;
+  --danger-tint: #f6e4df;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-border: var(--border);
+  --color-teal: var(--teal);
+  --color-teal-dark: var(--teal-dark);
+  --color-teal-tint: var(--teal-tint);
+  --color-ochre: var(--ochre);
+  --color-ochre-tint: var(--ochre-tint);
+  --color-danger: var(--danger);
+  --color-danger-tint: var(--danger-tint);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
