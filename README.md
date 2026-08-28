@@ -102,6 +102,24 @@ npm run dev
 
 Visit `http://localhost:3000`.
 
+### 5. Deploying
+
+When deploying to Vercel or another hosting provider, add these server-side environment variables in the provider's project settings:
+
+```
+COGNODB_URI=bolt+s://<instance-id>.databases.cognodb.com
+COGNODB_USER=cognodb
+COGNODB_PASSWORD=<your password>
+```
+
+Add them for the `Production` environment, then redeploy. Do not prefix them with `NEXT_PUBLIC_`: the database credentials must remain server-only. `.env.local` is for local development and is not committed to Git.
+
+Seed CognoDB from a machine where the credentials are configured before using the deployed app:
+
+```bash
+node scripts/seed.js
+```
+
 ---
 
 ## The queries
